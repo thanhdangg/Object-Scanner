@@ -2,4 +2,7 @@
     <string name="app_name">ObjectScanner</string>
     <string name="recents">Recents</string>
     <string name="this_is_title">This is title</string>
+    <string name="No_Internet_Connection">No Internet Connection</string>
+    <string name="wifi_quality_is_poor">Your Wifi quality is poor, which may impact application performance. Try moving to get better signal.</string>
+    <string name="retry">Retry</string>
 </resources>
