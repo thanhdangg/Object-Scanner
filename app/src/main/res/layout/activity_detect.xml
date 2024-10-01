@@ -5,13 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ActivityCamera">
+    tools:context=".ui.ActivityDetect">
 
-    <androidx.camera.view.PreviewView
+    <com.example.objectscanner.CameraXPreview
         android:id="@+id/previewView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
         />
 
     <com.google.android.material.card.MaterialCardView
@@ -65,6 +64,5 @@
             >
         </ImageView>
     </com.google.android.material.card.MaterialCardView>
-
 
 </FrameLayout>

@@ -1,4 +1,4 @@
-package com.example.objectscanner
+package com.example.objectscanner.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.objectscanner.R
+import com.example.objectscanner.database.AppDatabase
 import com.example.objectscanner.databinding.ActivityPhotoViewBinding
+import com.example.objectscanner.models.PhotoResult
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -36,6 +39,7 @@ class ActivityPhotoView : AppCompatActivity() {
             binding.imageView.setImageURI(photoPath.toUri())
             binding.editTextTitle.setText(photoPath.substringAfterLast("/"))
         }
+
         binding.btnBack.setOnClickListener {
             onBackPressed()
         }

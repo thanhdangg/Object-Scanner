@@ -1,4 +1,4 @@
-package com.example.objectscanner
+package com.example.objectscanner.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.objectscanner.R
+import com.example.objectscanner.database.AppDatabase
 import com.example.objectscanner.databinding.ActivityMainBinding
+import com.example.objectscanner.models.PhotoResult
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -43,7 +46,8 @@ class ActivityMain : AppCompatActivity() {
 
 
         binding.ivScan.setOnClickListener {
-            intent = Intent(this, ActivityCamera::class.java)
+//            intent = Intent(this, ActivityCamera::class.java)
+            intent = Intent(this, ActivityDetect::class.java)
             startActivity(intent)
         }
     }

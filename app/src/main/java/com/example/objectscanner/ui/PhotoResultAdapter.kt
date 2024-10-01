@@ -1,4 +1,4 @@
-package com.example.objectscanner
+package com.example.objectscanner.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.objectscanner.databinding.ItemResultBinding
+import com.example.objectscanner.models.PhotoResult
 
-class PhotoResultAdapter: ListAdapter<PhotoResult, PhotoResultAdapter.PhotoViewHolder>(PhotoDiffCallback()) {
+class PhotoResultAdapter: ListAdapter<PhotoResult, PhotoResultAdapter.PhotoViewHolder>(
+    PhotoDiffCallback()
+) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder {
         val binding = ItemResultBinding.inflate(LayoutInflater.from(parent.context), parent, false)

@@ -1,4 +1,4 @@
-package com.example.objectscanner
+package com.example.objectscanner.ui
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -18,16 +18,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.objectscanner.databinding.ActivityCameraBinding
 import java.io.File
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
+import com.example.objectscanner.R
 
 import org.opencv.android.OpenCVLoader;
-import org.opencv.android.Utils;
-import org.opencv.core.CvType;
-import org.opencv.core.Mat;
-import org.opencv.core.Size;
-import org.opencv.imgproc.Imgproc;
 
 
 class ActivityCamera : AppCompatActivity() {
@@ -48,6 +41,11 @@ class ActivityCamera : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        if (OpenCVLoader.initLocal()) {
+            Log.i("OpenCV", "OpenCV successfully loaded.");
+        } else {
+            Log.e("OpenCV", "OpenCV not loaded.");
         }
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -96,7 +94,7 @@ class ActivityCamera : AppCompatActivity() {
                 updateFlash()
 
             } catch (exc: Exception) {
-                // Handle exceptions
+                Log.e("ActivityCamera_LOG", "Use case binding failed", exc)
             }
 
         }, ContextCompat.getMainExecutor(this))
