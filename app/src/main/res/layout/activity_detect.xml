@@ -14,11 +14,16 @@
 <!--        />-->
 <!--    -->
 
-    <com.example.objectscanner.ui.custom.DocumentScannerView
-        android:id="@+id/documentScannerView"
+<!--    <com.example.objectscanner.ui.custom.DocumentScannerView-->
+<!--        android:id="@+id/documentScannerView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--    </com.example.objectscanner.ui.custom.DocumentScannerView>-->
+
+    <com.example.objectscanner.ui.custom.DetectView
+        android:id="@+id/detectView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.example.objectscanner.ui.custom.DocumentScannerView>
+        android:layout_height="match_parent"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/scanButton"
