@@ -5,6 +5,8 @@
     <uses-permission
         android:name="android.permission.CAMERA"
         tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,13 +19,16 @@
         android:theme="@style/Theme.ObjectScanner"
         tools:targetApi="31">
         <activity
-            android:name=".ActivityPhotoView"
+            android:name=".ui.ActivityDetect"
             android:exported="false" />
         <activity
-            android:name=".ActivityCamera"
+            android:name=".ui.ActivityPhotoView"
             android:exported="false" />
         <activity
-            android:name=".ActivityMain"
+            android:name=".ui.ActivityCamera"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ActivityMain"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
