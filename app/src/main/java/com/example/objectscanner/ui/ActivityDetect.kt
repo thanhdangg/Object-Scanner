@@ -8,10 +8,10 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.objectscanner.CameraXPreview
 import com.example.objectscanner.R
 import com.example.objectscanner.databinding.ActivityDetectBinding
 import com.example.objectscanner.ui.ActivityPhotoView
+import com.example.objectscanner.ui.custom.DetectView
 import com.example.objectscanner.utils.OpenCVUtils.saveBitmapToFile
 import java.io.File
 
@@ -51,9 +51,14 @@ class ActivityDetect : AppCompatActivity() {
     }
 
     private fun startCamera() {
-        val cameraXPreview = findViewById<CameraXPreview>(R.id.previewView)
-        cameraXPreview.startCamera(this)
-        cameraXPreview.setOnDocumentDetectedListener { bitmap ->
+//        val documentScannerView = findViewById<DocumentScannerView>(R.id.documentScannerView)
+//        documentScannerView.startCamera(this)
+//        documentScannerView.setOnDocumentDetectedListener { bitmap ->
+//            detectedBitmap = bitmap
+//        }
+        val detectView = findViewById<DetectView>(R.id.detectView)
+        detectView.startCamera(this)
+        detectView.setOnDocumentDetectedListener { bitmap ->
             detectedBitmap = bitmap
         }
     }
